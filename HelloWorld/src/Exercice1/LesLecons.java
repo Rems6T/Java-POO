@@ -35,14 +35,15 @@ public class LesLecons {
 		
 //		Les conditionnelles
 		
-//		if (simple)
+//		La condition if
+//		Simple
 		if(prenom.length() == 0) System.err.println("Le prénom est obligatoire !");
 		
-//		if (double)
+//		Double
 		if(prenom.length() == 0) System.err.println("Le prénom est obligatoire !");
 		else System.out.printf("Bonjour %s ! %n", prenom);
 		
-//		Si on veut rester sur un simple mais ne pas afficher d'erreur, on peut faire ceci
+//		Si on ne veut pas afficher de message d'erreur, on peut demander le contraire du résultat
 		if(!(prenom.length() == 0)) System.out.printf("Bonjour %s ! %n", prenom);
 //		OU
 		if(prenom.length() != 0) System.out.printf("Bonjour %s ! %n", prenom);
@@ -53,6 +54,7 @@ public class LesLecons {
 			System.exit(1);
 		}
 		
+//		La condition "switch"
 		String aJeter = "carton";
 		switch (aJeter) {
 		case "papier":
@@ -63,6 +65,7 @@ public class LesLecons {
 		case "végétaux":
 		case "épluchures":
 			System.out.println("Composte");
+			break;
 		default:
 			System.out.println("Poubelle");
 			break;
@@ -70,10 +73,45 @@ public class LesLecons {
 		
 		
 		
+//		Les boucles
 		
+//		For
+		float[] valeurs2 = {10.5f, 14.2f, 15.78f, 20, 19.2f};
+		for (int i = 0; i < valeurs2.length; i++) {
+			System.out.printf("%.2f%n", valeurs2[i]);
+		}
 		
+//		Foreach
+//		Traduction : f prend la valeur de chaque valeur du tableau "valeurs2" un après l'autre jusqu'à la fin du tableau
+		for (float f : valeurs2) {
+			System.out.printf("%.2f%n", f);
+		}
+
+//		While
+		float total = 0;
+		System.out.println("Saisissez une valeur ou rien pour terminer la saisie");
+		String saisie = s.nextLine();
+		while (!saisie.isEmpty()) {
+			float valeur = Float.parseFloat(saisie);
+			total += valeur;
+			System.out.println("Saisissez une note ou rien pour terminer la saisie");
+			saisie = s.nextLine();
+		}
+		System.out.printf("Total des valeurs saisies : %f%n", total);
 		
-		
+//		Do while
+		int min = 1;
+		int max = 10;
+		String message = "";
+		System.out.printf("Entrez un nombre", message);
+		int val = 0;
+		boolean ok;
+		do {
+			val = s.nextInt();
+			s.nextLine();
+			ok = val >= min && val <= max;
+			if(!ok) System.err.printf("La valeur doit être un entier compris entre %d et %d%nResaisissez...", min, max);
+		} while (!ok);
 		
 		
 		
