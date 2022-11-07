@@ -115,14 +115,29 @@ public class LesLecons {
 		
 		
 		
+//		Procédures et fonctions (voir les lignes 126 à 142)
+		salutations();
 		
 		
 		
-		
-		
-		
-		
-		
+//		
+	}
+	
+	private static void salutations()
+	{
+		String prenom = saisirPrenom();
+		afficherSalutation(prenom);
 	}
 
+	private static String saisirPrenom() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Saisissez votre prénom : ");
+		String prenom = s.nextLine();
+		s.close();
+		return prenom;
+	}
+
+	private static void afficherSalutation(String prenom) {
+		System.out.print("Bonjour " + prenom + " !");
+	}
 }
