@@ -30,6 +30,61 @@ public class LesLecons {
 //		On récupère une saisie en String (nextInt pour les nombres, nextFloat pour les nombres à virgule, etc...)
 		String prenom = s.nextLine();
 		s.close();
+		
+		
+		
+//		Les conditionnelles
+		
+//		if (simple)
+		if(prenom.length() == 0) System.err.println("Le prénom est obligatoire !");
+		
+//		if (double)
+		if(prenom.length() == 0) System.err.println("Le prénom est obligatoire !");
+		else System.out.printf("Bonjour %s ! %n", prenom);
+		
+//		Si on veut rester sur un simple mais ne pas afficher d'erreur, on peut faire ceci
+		if(!(prenom.length() == 0)) System.out.printf("Bonjour %s ! %n", prenom);
+//		OU
+		if(prenom.length() != 0) System.out.printf("Bonjour %s ! %n", prenom);
+		
+//		If avec plusieurs conditions, on doit mettre des accolades
+		if(prenom.length() == 0) {
+			System.err.println("Le prénom est obligatoire !");
+			System.exit(1);
+		}
+		
+		String aJeter = "carton";
+		switch (aJeter) {
+		case "papier":
+		case "carton":
+		case "boite de conserve":
+			System.out.println("Recyclage");
+			break;
+		case "végétaux":
+		case "épluchures":
+			System.out.println("Composte");
+		default:
+			System.out.println("Poubelle");
+			break;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
