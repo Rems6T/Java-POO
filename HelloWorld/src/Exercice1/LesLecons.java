@@ -1,7 +1,9 @@
 package Exercice1;
 
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.InputMismatchException;
-// On importe une classe de Java qui permet de lire les saisies de l'utilisateur
 import java.util.Scanner;
 
 public class LesLecons {
@@ -21,12 +23,16 @@ public class LesLecons {
 //		Lecture d'une valeur du tableau
 		System.out.println(valeurs[7]);
 
+//		_
+
 //		Création de la variable qui va lire les saisies de l'utilisateur
 		Scanner s = new Scanner(System.in);
 		System.out.println("Quel est votre prénom ? ");
 //		On récupère une saisie en String (nextInt pour les nombres, nextFloat pour les nombres à virgule, etc...)
 		String prenom = s.nextLine();
 		s.close();
+
+//		_
 
 //		Les conditionnelles
 
@@ -70,6 +76,8 @@ public class LesLecons {
 			System.out.println("Poubelle");
 			break;
 		}
+
+//		_
 
 //		Les boucles
 
@@ -115,7 +123,32 @@ public class LesLecons {
 //		Procédures et fonctions (voir les lignes 126 à 142)
 		salutations();
 
-//		
+//		_
+
+//		Ecriture dans un fichier
+		double[] valeurs3 = { 17.99, 22.41, 6.0, 39.02, 78.45, 44.7854 };
+		try (FileWriter f = new FileWriter("./valeurs.txt")) {
+			for (int i = 0; i < valeurs3.length; i++) {
+				f.write(String.format("%.2f%n", valeurs3[i]));
+				System.out.println("Entregistrement terminé avec succès");
+			}
+		} catch (IOException e) {
+			System.err.println("Ecriture impossible");
+		}
+		
+//		_
+		
+//		Lecture de données d'un fichier
+		
+		try(FileInputStream fichier = new FileInputStream("./valeurs.txt");
+				Scanner sc = new Scanner(fichier)) {
+			while (sc.hasNextLine())
+				System.out.println(sc.nextLine());
+		} catch (IOException e) {
+			System.err.println("Lecture impossible");
+		}
+		
+		
 	}
 
 	private static void salutations() {
