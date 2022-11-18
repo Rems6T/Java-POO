@@ -2,7 +2,6 @@ package fr.formation.module5.monopoly;
 
 public class Terrain extends Propriete {
 
-	@SuppressWarnings("unused")
 	public Terrain(String nom, int prixAchat, Groupe groupe, int coutConstruction) {
 		super(nom, prixAchat, groupe);
 		this.coutConstruction = coutConstruction;
